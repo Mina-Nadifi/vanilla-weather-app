@@ -1,6 +1,6 @@
 function searchWeather() {
-  var locationInput = document.getElementById("locationInput");
-  var location = locationInput.value;
+  let locationInput = document.getElementById("locationInput");
+  let location = locationInput.value;
 
   // You can use a weather API here to fetch weather data based on the location
 

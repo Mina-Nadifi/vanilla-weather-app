@@ -1,9 +1,10 @@
 .container {
-  background-color: skyblue;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  /* background-color: skyblue;
+ */
   padding: 20px;
   font-family: "Your Chosen Font", sans-serif;
   color: black;
+  margin-top: 60px;
 }
 
 .search-bar {
@@ -11,14 +12,50 @@
 }
 
 .city-name {
-  font-size: 36px;
+  font-size: calc(12px + 1vw);
   font-weight: bold;
 }
 
 .temperature {
   font-size: 48px;
+  direction: rtl;
 }
 
 #weatherInfo {
   margin-top: 20px;
+}
+.cards {
+  margin-top: 253px !important;
+  background-color: skyblue;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-width: 2px;
+  border-color: rgb(207, 200, 200);
+  border-style: ridge;
+  outline-color: #3704ff29;
+  border-radius: 16px;
+  outline-style: groove;
+}
+.searchBar {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-width: 2px;
+  border-color: rgb(207, 200, 200);
+  border-style: ridge;
+  outline-color: #3704ff29;
+}
+
+.card-bodys {
+  border-radius: 16px;
+  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+
+  font-family: Cerebri-Sans, Helvetica, Arial, sans-serif;
+  padding: 40px;
+}
+.city-name ul {
+  list-style: none;
+}
+.forecastDaily {
+  font-size: calc(12px + 1vw);
+}
+.weather-forecast {
+  text-align: center;
 }
