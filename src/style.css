@@ -1,9 +1,22 @@
 .container {
-  text-align: center;
+  background-color: skyblue;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  font-family: "Your Chosen Font", sans-serif;
+  color: black;
 }
 
 .search-bar {
   margin: 20px auto;
+}
+
+.city-name {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.temperature {
+  font-size: 48px;
 }
 
 #weatherInfo {
