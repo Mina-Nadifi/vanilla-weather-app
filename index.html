@@ -8,18 +8,50 @@
   </head>
   <body>
     <h1>Vanilla Vanilla-Weather-App</h1>
-
-    <div class="container">
-      <h1>Weather App</h1>
-      <div class="search-bar">
-        <input type="text" id="locationInput" placeholder="Enter location" />
-        <button onclick="searchWeather()">Search</button>
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="card" style="width: 800px; height: 600px">
+        <div class="card-body">
+          <h1 class="text-center mb-4">Weather App</h1>
+          <div class="search-bar mb-4">
+            <input
+              type="text"
+              id="locationInput"
+              placeholder="Enter location"
+              class="form-control"
+            />
+            <button onclick="searchWeather()" class="btn btn-primary">
+              Search
+            </button>
+          </div>
+          <div class="weather-details">
+            <div class="city-name font-weight-bold mb-3"></div>
+            <div class="temperature display-4 mb-5"></div>
+          </div>
+          <div class="weather-forecast mb-4">
+            <div class="row">
+              <div class="col">
+                <div class="forecast-day text-center">Day</div>
+                <div class="forecast-temp text-center">Temperature</div>
+                <div class="forecast-min text-center">Min</div>
+                <div class="forecast-max text-center">Max</div>
+                <div class="forecast-icon text-center">Icon</div>
+              </div>
+              <!-- Repeat the above section for 7 days -->
+            </div>
+          </div>
+          <div class="forecast-temperature-graph mb-4">
+            <canvas id="graphCanvas1"></canvas>
+          </div>
+          <div class="forecast-temperature-graph mb-4">
+            <svg id="graphSVG"></svg>
+          </div>
+          <div class="forecast-temperature-graph">
+            <canvas id="graphCanvas2"></canvas>
+          </div>
+        </div>
       </div>
-      <div class="weather-details">
-        <div class="city-name"></div>
-        <div class="temperature"></div>
-      </div>
-      <div id="weatherInfo"></div>
     </div>
 
     <script src="src/script.js"></script>
