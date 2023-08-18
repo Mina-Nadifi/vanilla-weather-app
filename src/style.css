@@ -27,7 +27,7 @@
 }
 .cards {
   /*margin-top: 253px !important;*/
-  background-color: skyblue;
+  background-color: #87ceeb;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-width: 2px;
   border-color: rgb(207, 200, 200);
@@ -36,7 +36,7 @@
   border-radius: 16px;
   outline-style: groove;
 }
-.searchBar {
+.searchInput {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-width: 2px;
   border-color: rgb(207, 200, 200);
@@ -59,4 +59,54 @@
 }
 .weather-forecast {
   text-align: center;
+}
+.searcher {
+  position: relative;
+  z-index: 1;
+  background: #fffffffa;
+  padding-right: 0;
+  padding-left: 0;
+  /*width: 20.5em;*/
+  border-radius: 8px;
+}
+.searchInput {
+  background: transparent;
+}
+.flotingPlaceHolder {
+  position: absolute;
+  left: 18px;
+  top: 8px;
+  background: white;
+  padding: 0 7px;
+  transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 300ms;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #00000049;
+  z-index: -10;
+}
+.searchInput:focus ~ .flotingPlaceHolder,
+.searchInput:valid ~ .flotingPlaceHolder {
+  transform: scale(0.96) translateX(-16px) translateY(-32px);
+  color: white;
+  font-weight: bolder;
+  font-size: 15px;
+  z-index: 2;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 -4px 0 0.11rem rgba(13, 110, 253, 0.25);
+  border-color: #86b7fe;
+  outline: 0;
+
+  border-left-color: #86b7fe0f;
+  border-left-style: ridge;
+  border-left-width: 2.8px;
+  border-right-color: #86b7fe0f;
+  border-right-style: ridge;
+  border-right-width: 2.8px;
+  border-top-color: #86b7fe0f;
+  border-top-style: ridge;
+  border-top-width: 2.8px;
+  border-bottom: none;
+
+  background-color: #87ceeb;
 }

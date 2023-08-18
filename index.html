@@ -24,16 +24,24 @@
       <div class="cards">
         <div class="card-bodys">
           <div class="row search-bar mb-4">
-            <div class="col-8 align-self-start">
+            <div class="col-8 align-self-start searcher">
               <input
                 type="text"
                 id="locationInput"
-                placeholder="Enter location"
-                class="form-control searchBar"
+                placeholder=""
+                required
+                class="form-control searchInput"
               />
+              <div class="flotingPlaceHolder snByac" aria-hidden="true">
+                Enter Location
+              </div>
             </div>
             <div class="col-2">
-              <button onclick="searchWeather()" class="btn btn-primary">
+              <button
+                onclick="searchWeather()"
+                class="btn btn-primary"
+                type="submit"
+              >
                 Search
               </button>
             </div>
