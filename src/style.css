@@ -18,11 +18,11 @@
 }
 
 .temperature {
-  font-size: 48px;
+  font-size: 16px;
   direction: rtl;
 }
 .current-temp {
-  font-size: 48px;
+  font-size: 69px;
 }
 .temp {
   line-height: 45px;
@@ -45,6 +45,7 @@
   outline-color: #3704ff29;
   border-radius: 16px;
   outline-style: groove;
+  text-shadow: 1px 1px 1px black;
 }
 .searchInput {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
