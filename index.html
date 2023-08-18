@@ -54,31 +54,37 @@
           <div class="weather-details row">
             <div class="city-name font-weight-bold mb-3 align-self-start col">
               <h1>San Francisco</h1>
+              <div
+                class="weatherTemp"
+                style="justify-content: flex-end !important"
+              >
+                <div class="current-temp d-inline-flex p-2">
+                  <strong class="temp">15</strong>
+                  <span class="celcius">°C |</span
+                  ><span class="foreign"> °F</span>
+                </div>
+                <div class="weatherIcon">
+                  <img
+                    width="100px"
+                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    srcset=""
+                  />
+                </div>
+              </div>
               <ul>
-                <li><span>Sunday 12:28</span></li>
-                <li><span>broken clouds</span></li>
                 <li>
-                  Humidity: <strong>87%</strong>, Wind:
-                  <strong>5.14km/h</strong>
+                  <span><small>Sunday 12:28</small></span>
+                </li>
+                <li>
+                  <span><small>broken clouds</small></span>
                 </li>
               </ul>
             </div>
             <div
               class="temperature display-4 mb-5 align-self-end col col-lg-6 col-md-6 col-sm-8"
             >
-              <div
-                class="weatherTemp"
-                style="justify-content: flex-end !important"
-              >
-                15°C
-                <div class="weatherIcon">
-                  <img
-                    src="https://www.weather.shecodes.io/images/logo.png"
-                    width="60px"
-                    srcset=""
-                  />
-                </div>
-              </div>
+              <div>Humidity: <strong>87%</strong></div>
+              <div>Wind: <strong>5.14km/h</strong></div>
             </div>
           </div>
           <div class="weather-forecast mb-4">

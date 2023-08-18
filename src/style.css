@@ -3,7 +3,7 @@
  */
   padding: 20px;
   font-family: "Your Chosen Font", sans-serif;
-  color: black;
+  color: white;
   margin-top: 60px;
   height: 100% !important;
 }
@@ -13,7 +13,7 @@
 }
 
 .city-name {
-  font-size: calc(12px + 1vw);
+  /*font-size: calc(12px + 1vw);*/
   font-weight: bold;
 }
 
@@ -21,7 +21,16 @@
   font-size: 48px;
   direction: rtl;
 }
-
+.current-temp {
+  font-size: 48px;
+}
+.temp {
+  line-height: 45px;
+}
+.weatherTemp .current-temp .celcius,
+.weatherTemp .current-temp .foreign {
+  font-size: 16px;
+}
 #weatherInfo {
   margin-top: 20px;
 }
@@ -110,4 +119,7 @@
   border-bottom: none;
 
   background-color: #87ceeb;
+}
+.searchInput:focus ~ .flotingPlaceHolder::after {
+  content: ":";
 }
