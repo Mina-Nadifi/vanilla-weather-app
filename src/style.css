@@ -27,7 +27,8 @@
 }
 .cards {
   /*margin-top: 253px !important;*/
-  background-color: #87ceeb;
+  /*background-color: #87ceeb;*/
+  background-image: url("/img/blue-sky-with-clouds.jpg");
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   border-width: 2px;
   border-color: rgb(207, 200, 200);
