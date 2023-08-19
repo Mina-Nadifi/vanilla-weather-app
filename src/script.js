@@ -1,9 +1,11 @@
 function main() {
   // Function #1 that uses axios response after the apiUrl is built
   function showWeather(response) {
+    document.querySelector("h1").innerHTML = response.data.name;
+
     document.querySelector(
       "#description"
-    ).innerHTML = `${response.data.weather[0].main}`;
+    ).innerHTML = `${response.data.weather[0].description}`;
     document.querySelector(".temp").innerHTML = `${Math.round(
       response.data.main.temp
     )}`;
@@ -28,21 +30,24 @@ function main() {
   }
 
   // Setting Current Day and Time
-  let currentDate = new Date();
-  let weekDays = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  document.querySelector(".currentDate").innerHTML = `${
-    weekDays[currentDate.getDay()]
-  }    ${currentDate.getHours()}:${currentDate.getMinutes()}`;
-
-  //Generated Api Url Using search bar for city
+  function showDate(response) {
+    let currentDate = new Date(response.data.dt * 1000);
+    let weekDays = [
+      "Sunday",
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+    ];
+    console.log(currentDate);
+    console.log("Hello world");
+    document.querySelector(".currentDate").innerHTML = `${
+      weekDays[currentDate.getDay()]
+    }    ${currentDate.getHours()}:${currentDate.getMinutes()}`;
+  }
+  //Generated Api Url Using form location Input for city
   document.querySelector(".inputCity").addEventListener("submit", (event) => {
     event.preventDefault();
     if (document.querySelector("#locationInput").value.length === 0) {
@@ -53,9 +58,14 @@ function main() {
     let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
     let apiKey = "e450bc345a80a08ada69fd5c714d871d";
     let unit = "metric";
-    document.querySelector("h1").innerHTML = capitalizer(cityName);
+
     let apiUrl = `${apiEndpoint}?q=${cityName}&appid=${apiKey}&units=${unit}`;
     axios.get(apiUrl).then(showWeather);
+    axios.get(apiUrl).then(showDate);
+    axios.get(apiUrl).catch(function (error) {
+      alert("Please Enter a Valid City name");
+      document.querySelector("#locationInput").value = "";
+    });
   });
 
   //1 --- Capitalizes First letter of every word
@@ -74,5 +84,9 @@ function main() {
   document.querySelector("h1").innerHTML = cityName;
   let apiUrl = `${apiEndpoint}?q=${cityName}&appid=${apiKey}&units=${unit}`;
   axios.get(apiUrl).then(showWeather);
+  axios.get(apiUrl).then(showDate);
+
+  //Unit change based on User's Request
+  document.querySelector(".foreign").addEventListener;
 }
 main();

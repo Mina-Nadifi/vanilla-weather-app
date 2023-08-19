@@ -37,13 +37,13 @@
 .temp {
   line-height: 45px;
 }
-.weatherTemp .current-temp .celcius {
+.linked {
   color: #0d6efd;
-}
-.weatherTemp .current-temp .celcius,
-.weatherTemp .current-temp .foreign {
-  font-size: 16px;
   cursor: pointer;
+}
+.celcius,
+.foreign {
+  font-size: 16px;
 }
 #weatherInfo {
   margin-top: 20px;
@@ -80,6 +80,10 @@
 }
 .city-name ul {
   list-style: none;
+}
+
+.weatherDescription:first-letter {
+  text-transform: capitalize;
 }
 .forecastDaily {
   font-size: calc(12px + 1vw);
