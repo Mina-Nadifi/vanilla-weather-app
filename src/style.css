@@ -60,6 +60,8 @@
   border-radius: 16px;
   outline-style: groove;
   text-shadow: 1px 1px 1px black;
+  max-width: 792px;
+  width: 100%;
 }
 .searchInput {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
