@@ -39,14 +39,14 @@
             <div class="col-2">
               <button
                 onclick="searchWeather()"
-                class="btn btn-primary"
+                class="btn btn-warning searchBtn"
                 type="submit"
               >
                 Search
               </button>
             </div>
             <div class="col-2">
-              <button onclick="searchWeather()" class="btn btn-primary">
+              <button onclick="searchWeather()" class="btn btn-info">
                 Search
               </button>
             </div>
@@ -65,23 +65,26 @@
                 </div>
                 <div class="weatherIcon">
                   <img
+                    class="weather-image"
                     width="100px"
-                    src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                    src="https://pics.clipartpng.com/Clouds_Weather_Icon_PNG_Clip_Art-1508.png"
                     srcset=""
                   />
                 </div>
               </div>
-              <ul>
-                <li>
-                  <span><small>Sunday 12:28</small></span>
-                </li>
-                <li>
-                  <span><small>broken clouds</small></span>
-                </li>
-              </ul>
+              <div class="currentDateWather">
+                <ul>
+                  <li>
+                    <span><small>Sunday 12:28</small></span>
+                  </li>
+                  <li>
+                    <span><small>broken clouds</small></span>
+                  </li>
+                </ul>
+              </div>
             </div>
             <div
-              class="temperature display-4 mb-5 align-self-end col col-lg-6 col-md-6 col-sm-8"
+              class="weather display-4 mb-5 float-end col col-lg-6 col-md-6 col-sm-8"
             >
               <div>Humidity: <strong>87%</strong></div>
               <div>Wind: <strong>5.14km/h</strong></div>
@@ -161,6 +164,23 @@
           <div class="forecast-temperature-graph">
             <canvas id="graphCanvas2"></canvas>
           </div>
+          <footer>
+            Coded by
+            <a
+              href="https://www.shecodes.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Mina</a
+            >
+            and is
+            <a
+              href="https://github.com/shecodesio/weather"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              on GitHub</a
+            >
+          </footer>
         </div>
       </div>
     </div>

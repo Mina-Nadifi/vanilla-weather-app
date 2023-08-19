@@ -16,10 +16,20 @@
   /*font-size: calc(12px + 1vw);*/
   font-weight: bold;
 }
-
-.temperature {
-  font-size: 16px;
+.weather-image {
+  filter: contrast(180%);
+}
+.currentDateWather {
+  font-size: 20px;
+  font-weight: bolder;
+}
+.weather {
+  font-size: 20px;
+  font-weight: bolder;
   direction: rtl;
+  text-align: center;
+  padding-top: 45px;
+  line-height: 35px;
 }
 .current-temp {
   font-size: 69px;
@@ -27,9 +37,13 @@
 .temp {
   line-height: 45px;
 }
+.weatherTemp .current-temp .celcius {
+  color: #0d6efd;
+}
 .weatherTemp .current-temp .celcius,
 .weatherTemp .current-temp .foreign {
   font-size: 16px;
+  cursor: pointer;
 }
 #weatherInfo {
   margin-top: 20px;
@@ -123,4 +137,18 @@
 }
 .searchInput:focus ~ .flotingPlaceHolder::after {
   content: ":";
+}
+.searchBtn {
+  border-style: groove;
+  border: greenyellow;
+  border-width: 1px;
+}
+footer {
+  text-align: center;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px rgb(102, 0, 161);
+}
+footer a {
+  color: black;
+  text-shadow: none;
 }
