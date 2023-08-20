@@ -75,6 +75,7 @@ function main() {
     let unit = "metric";
     axiosGo(cityName, unit);
     classSwitcher(".foreign", ".celcius");
+    document.querySelector(".speedUnit").innerHTML = "km/h";
   });
 
   //2 ---Default Api Url at page start
