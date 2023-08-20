@@ -22,10 +22,7 @@ function main() {
     )}`;
     document
       .querySelector(".weather-image")
-      .setAttribute(
-        "src",
-        `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-      );
+      .setAttribute("src", `/img/weather/${response.data.weather[0].icon}.png`);
     document.querySelector(".humidity").innerHTML = ` ${Math.round(
       response.data.main.humidity
     )}%`;

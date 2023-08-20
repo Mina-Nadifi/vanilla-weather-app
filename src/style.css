@@ -43,6 +43,9 @@
   font-weight: 100;
   font-size: 13px !important;
 }
+.lastUpdate {
+  font-size: 10px;
+}
 .celcius,
 .foreign {
   font-size: 16px;
