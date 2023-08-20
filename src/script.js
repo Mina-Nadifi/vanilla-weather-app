@@ -74,6 +74,7 @@ function main() {
 
     let unit = "metric";
     axiosGo(cityName, unit);
+    classSwitcher(".foreign", ".celcius");
   });
 
   //2 ---Default Api Url at page start
@@ -98,7 +99,11 @@ function main() {
     classSwitcher(".celcius", ".foreign");
     document.querySelector(".speedUnit").innerHTML = "mp/h";
   }
-
+  function changeTempToCel() {
+    axiosGo(cityName, "metric");
+    classSwitcher(".foreign", ".celcius");
+    document.querySelector(".speedUnit").innerHTML = "km/h";
+  }
   document
     .querySelectorAll(".foreign")[0]
     .addEventListener("click", changeTempToFor);
@@ -109,12 +114,6 @@ function main() {
     .querySelectorAll(".foreign")[2]
     .addEventListener("click", changeTempToFor);
 
-  function changeTempToCel() {
-    axiosGo(cityName, "metric");
-    classSwitcher(".foreign", ".celcius");
-    document.querySelector(".speedUnit").innerHTML = "km/h";
-  }
-
   document
     .querySelectorAll(".celcius")[0]
     .addEventListener("click", changeTempToCel);
@@ -124,19 +123,5 @@ function main() {
   document
     .querySelectorAll(".celcius")[2]
     .addEventListener("click", changeTempToCel);
-
-  /*
-  document.querySelectorAll(".linked").addEventListener("click", () => {
-    if (document.querySelector(".linked").innerHTML == " °F") {
-      axiosGo(cityName, "imperial");
-      document.querySelector(".celcius").classList.add("linked");
-      document.querySelector(".celcius").classList.remove("linked");
-    } else if (document.querySelector(".linked").innerHTML == "°C |") {
-      axiosGo(cityName, "metric");
-      document.querySelector(".celcius").classList.remove("linked");
-      document.querySelector(".foreign").classList.add("linked");
-    }
-  });*/
 }
-
 main();
