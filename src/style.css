@@ -193,7 +193,7 @@ li.suggestion-item:hover {
   font-family: system-ui;
 }
 img.future-image {
-  object-fit: none;
+  /*object-fit: none;*/
 }
 footer {
   text-align: center;

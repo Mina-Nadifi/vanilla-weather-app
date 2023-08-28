@@ -80,7 +80,7 @@ function main() {
           .querySelectorAll(".future-image")
           [index].setAttribute(
             "src",
-            `${cast.data.daily[index].condition.icon_url}`
+            `/img/weather/${cast.data.daily[index].condition.icon}.png`
           );
 
         document
