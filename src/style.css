@@ -17,7 +17,7 @@
   font-weight: bold;
 }
 .weather-image {
-  filter: contrast(180%);
+  filter: contrast(120%);
 }
 .currentDateWather {
   font-size: 20px;
