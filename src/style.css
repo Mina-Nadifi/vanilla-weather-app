@@ -192,8 +192,11 @@ li.suggestion-item:hover {
   font-stretch: condensed;
   font-family: system-ui;
 }
-img.future-image {
-  /*object-fit: none;*/
+.image-container {
+  height: 85px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 footer {
   text-align: center;
