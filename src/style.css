@@ -49,7 +49,7 @@
 
 ul#suggestion-box {
   display: none;
-  height: 400px;
+  max-height: 400px;
   overflow: scroll;
 }
 .suggestions {

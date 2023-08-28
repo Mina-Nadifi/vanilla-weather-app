@@ -1,6 +1,7 @@
 function main() {
   // Fetch Function called axiosGo
   function axiosGo(city, units) {
+    clearList();
     let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather";
     let apiKey = "e450bc345a80a08ada69fd5c714d871d";
     let apiUrl = `${apiEndpoint}?q=${city}&appid=${apiKey}&units=${units}`;
@@ -8,8 +9,9 @@ function main() {
     axios.get(apiUrl).then(showDate);
     if (units == "metric") {
       axios.get(apiUrl).then((response) => {
-        document.querySelector(".windSpeed").innerHTML = `${Number.parseFloat(
-          (response.data.wind.speed * 3600) / 1000
+        document.querySelector(".windSpeed").innerHTML = `${(
+          (response.data.wind.speed * 3600) /
+          1000
         ).toFixed(1)}`;
       });
     }
@@ -18,6 +20,8 @@ function main() {
       clearList();
       document.querySelector("#locationInput").value = "";
     });
+    clearList();
+
     //New function for fixing the wind speed : the functions gets both imperial and metric , cpmpare the two and puts the big in imperial and the small into metric
   }
   // Function #1 that uses ---"Axios Response"--- after the apiUrl is built in anyway
@@ -35,9 +39,9 @@ function main() {
     document.querySelector(".humidity").innerHTML = ` ${Math.round(
       response.data.main.humidity
     )}%`;
-    document.querySelector(".windSpeed").innerHTML = `${Number.parseFloat(
-      response.data.wind.speed
-    ).toFixed(1)}`;
+    document.querySelector(
+      ".windSpeed"
+    ).innerHTML = `${response.data.wind.speed.toFixed(1)}`;
     document.querySelector(".minTemp").innerHTML = ` ${Math.round(
       response.data.main.temp_min
     )}`;
@@ -100,7 +104,6 @@ function main() {
       "Friday",
       "Saturday",
     ];
-
     let weekday = new Date(future.time * 1000);
     let ret = weekDays[weekday.getDay()];
     return ret.slice(0, 3);
@@ -128,7 +131,6 @@ function main() {
       }    ${currentDate.getHours()}:0${currentDate.getMinutes()}`;
     }
   }
-
   //function for city names suggestions #############################
   // Function showResult adds the evaluated result  under the search box when user types
   function showResults(suggestions) {
@@ -150,7 +152,6 @@ function main() {
       });
     });
   }
-
   //clear List as it's name clears the list of suggestion in two events. when user types and after user submits the form I removed the condition for 4th letter
   //Cause I made if (queryOfUser.length >= 4) {} to refresh the suggestion Items list in <ul>
   function clearList() {
@@ -176,36 +177,38 @@ function main() {
       })
     );
   }
-
-  function myFunction() {
-    let x = document.querySelector(".searchInput");
-    let word = x.value;
-    if (word.length >= 3) {
-      fetch("/src/city.list.json")
-        .then((response) => response.json())
-        .then(lookUp);
+  function myFunction(event) {
+    //new code to fix the "enter key inside form input but not clearing search result error"
+    if ((event.which === 13) | (event.code === "Enter")) {
+      clearList();
+    } else {
+      let x = document.querySelector(".searchInput");
+      let word = x.value;
+      if (word.length >= 3) {
+        fetch("/src/city.list.json")
+          .then((response) => response.json())
+          .then(lookUp);
+      }
     }
   }
   document.querySelector(".searchInput").addEventListener("keyup", myFunction);
-  /*let words = document.querySelector("searchInput");
-  words.addEventListener("keyup", suggestCity);*/
-
   //Generated Api Url Using form location Input for city ---  User Action
   document.querySelector(".inputCity").addEventListener("submit", (event) => {
     event.preventDefault();
     clearList();
+    document.body.addEventListener("click", clearList);
+
     if (document.querySelector("#locationInput").value.length === 0) {
       alert("Please type a city name !!");
     } else {
       cityName = document.querySelector("#locationInput").value;
     }
-
     let unit = "metric";
     axiosGo(cityName, unit);
     classSwitcher(".foreign", ".celcius");
     document.querySelector(".speedUnit").innerHTML = "km/h";
+    clearList();
   });
-
   //2 ---Default Api Url at page start
   let unit = "metric";
   let cityName = "New York";
